@@ -1,11 +1,12 @@
 html {
     font-family: "Afacad Flux", sans-serif;
-    background-color: #3e57d3;
+    background-color: black;
     color: white;
     display: flex; 
     flex-direction: column; 
     min-height: 100vh; 
     margin: 0;
+    padding: 0;
   }
 footer { 
     margin-top: auto; 
