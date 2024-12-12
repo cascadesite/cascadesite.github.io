@@ -14,7 +14,17 @@ body {
   flex-direction: column;
   flex: 1;
 }
-
+::-webkit-scrollbar {
+  width: 10px;
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: white;
+}
+::-webkit-scrollbar-track {
+  background: black;
+}
 footer {
   width: 100%;
   text-align: center;
