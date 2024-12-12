@@ -26,7 +26,7 @@ body {
   z-index: 2;
 }
 ::-webkit-scrollbar-track {
-  background: black;
+  background: transparent;
 }
 footer {
   width: 100%;
