@@ -1,4 +1,4 @@
-{
+particlesJS('particles-js', {
     "particles": {
       "number": {
         "value": 150,
@@ -22,7 +22,7 @@
         "random": true,
         "anim": {
           "enable": true,
-          "speed": 1,
+          "speed": 1.5,
           "opacity_min": 0.3,
           "sync": false
         }
@@ -93,4 +93,4 @@
       }
     },
     "retina_detect": true
-  }
+  });
