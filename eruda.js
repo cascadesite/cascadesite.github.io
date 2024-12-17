@@ -1,4 +1,3 @@
-// Function to load Eruda
 function loadEruda() {
     var script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/npm/eruda';
@@ -8,13 +7,16 @@ function loadEruda() {
     };
 }
 
-// Listen for "eruda" keyword in console
 (function () {
-    var originalConsole = console.log;
-    console.log = function (message) {
-        if (typeof message === 'string' && message.toLowerCase() === 'eruda') {
+    var keyword = '';
+    document.addEventListener('keypress', function (event) {
+        keyword += event.key.toLowerCase();
+        if (keyword.endsWith('eruda')) {
             loadEruda();
+            keyword = '';
         }
-        originalConsole.apply(console, arguments);
-    };
+        if (keyword.length > 5) {
+            keyword = keyword.slice(-5);
+        }
+    });
 })();
