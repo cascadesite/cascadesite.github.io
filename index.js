@@ -47,8 +47,8 @@ async function getRandomPhrase() {
     const randomPhrase = await getRandomPhrase();
     phraseContainer.textContent = randomPhrase;
   });
-  // Particles
-  particlesJS('particles-js', {
+// Particles
+particlesJS('particles-js', {
     "particles": {
         "number": {
             "value": 100,
@@ -144,4 +144,3 @@ async function getRandomPhrase() {
     },
     "retina_detect": true
   });
-  
