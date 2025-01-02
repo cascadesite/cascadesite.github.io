@@ -92,7 +92,6 @@ h3 {
   padding: 14px 20px;
   border-radius: 10px;
   transition: background-color 0.3s ease;
-  font-size: 20px;
 }
 
 .navbar a:hover {
@@ -109,9 +108,17 @@ h3 {
   align-items: center;
 }
 
+.menu a {
+  font-size: 20px;
+}
+
 .dropdown {
   position: relative;
   display: inline-block;
+}
+
+.dropdown a {
+  font-size: 20px;
 }
 
 .dropdown-content {

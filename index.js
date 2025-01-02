@@ -57,11 +57,13 @@ function setTheme(theme) {
       document.body.style.color = '#fff';
   }
 
-  document.querySelectorAll('*').forEach(function(el) {
+  const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, span, div, li, td, th');
+
+  textElements.forEach(function(el) {
       if (theme === 'light') {
-          el.style.color = '#000 !important';
+          el.style.color = '#000';
       } else {
-          el.style.color = '#fff !important';
+          el.style.color = '#fff';
       }
   });
 }
