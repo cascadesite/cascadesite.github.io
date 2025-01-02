@@ -49,12 +49,23 @@ async function getRandomPhrase() {
   });
 // Theme
 function setTheme(theme) {
-    if (theme === 'light') {
-        document.body.style.backgroundColor = '#fff';
-        document.body.style.color = '#000';
-    } else {
-        document.body.style.backgroundColor = '#000';
-        document.body.style.color = '#fff';
-    }
+  if (theme === 'light') {
+      document.body.style.backgroundColor = '#fff';
+      document.body.style.color = '#000';
+  } else {
+      document.body.style.backgroundColor = '#000';
+      document.body.style.color = '#fff';
+  }
+
+  document.querySelectorAll('*').forEach(function(el) {
+      if (theme === 'light') {
+          el.style.color = '#000 !important';
+      } else {
+          el.style.color = '#fff !important';
+      }
+  });
 }
-setTheme('dark');
+
+window.onload = function() {
+  setTheme('dark');
+};
