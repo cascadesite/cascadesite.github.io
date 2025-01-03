@@ -94,7 +94,7 @@ h3 {
   transition: background-color 0.3s ease;
 }
 
-.logo a:hover {
+.logo:hover {
   background-color: #0451a5;
 }
 
@@ -109,7 +109,7 @@ h3 {
 }
 
 .menu a {
-  font-size: 20px;
+  font-size: 25px;
 }
 .menu a:hover {
   background-color: #058ea5;
@@ -121,7 +121,9 @@ h3 {
 }
 
 .dropdown a {
-  font-size: 20px;
+  font-size: 25px;
+  position: relative;
+  z-index: 2;
 }
 
 .dropdown a:hover {
@@ -136,12 +138,24 @@ h3 {
   border-radius: 20px;
   z-index: 1;
   text-align: center;
-  transition: background-color 0.3s ease;
   padding: 10px;
   top: calc(100% + 50px);
   left: calc(40% + 1px);
   transform: translateX(-50%);
   box-sizing: border-box;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+}
+
+.dropdown-content::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  left: -50%;
+  width: 200%;
+  height: 50px;
+  background-color: transparent;
 }
 
 .dropdown-content a {
@@ -157,6 +171,18 @@ h3 {
   background-color: #053a79;
 }
 
-.dropdown:hover .dropdown-content {
+.dropdown:hover .dropdown-content,
+.dropdown-content:hover {
   display: block;
+  opacity: 1;
+  visibility: visible;
+  animation: fadeIn 0.3s ease forwards;
+} 
+@keyframes fadeIn { 
+  from { 
+    opacity: 0; 
+  } 
+  to { 
+    opacity: 1; 
+  } 
 }
