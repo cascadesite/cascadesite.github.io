@@ -52,9 +52,17 @@ function setTheme(theme) {
   if (theme === 'light') {
       document.body.style.backgroundColor = '#fff';
       document.body.style.color = '#000';
-  } else {
+  } else if (theme === 'dark') {
       document.body.style.backgroundColor = '#000';
       document.body.style.color = '#fff';
+  } else if (theme === 'system') {
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.body.style.backgroundColor = '#000';
+          document.body.style.color = '#fff';
+      } else {
+          document.body.style.backgroundColor = '#fff';
+          document.body.style.color = '#000';
+      }
   }
 
   const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, span, div, li, td, th');
@@ -62,12 +70,33 @@ function setTheme(theme) {
   textElements.forEach(function(el) {
       if (theme === 'light') {
           el.style.color = '#000';
-      } else {
+      } else if (theme === 'dark') {
           el.style.color = '#fff';
+      } else if (theme === 'system') {
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              el.style.color = '#fff';
+          } else {
+              el.style.color = '#000';
+          }
       }
   });
 
   localStorage.setItem('theme', theme);
+}
+
+function toggleTheme() {
+  const currentTheme = localStorage.getItem('theme') || 'system';
+  let newTheme;
+  
+  if (currentTheme === 'system') {
+      newTheme = 'light';
+  } else if (currentTheme === 'light') {
+      newTheme = 'dark';
+  } else {
+      newTheme = 'system';
+  }
+
+  setTheme(newTheme);
 }
 
 window.onload = function() {
@@ -75,6 +104,6 @@ window.onload = function() {
   if (savedTheme) {
       setTheme(savedTheme);
   } else {
-      setTheme('dark');
+      setTheme('system');
   }
 };

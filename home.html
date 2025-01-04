@@ -10,20 +10,13 @@
   <body>
     <div id="particles-js"></div>
     <div class="navbar-container"> 
-      <div class="navbar"> 
-        <a href="/" class="logo">Cascade</a> 
-        <div class="menu"> 
-          <a href="games.html">Games</a> 
-          <div class="dropdown"> 
-            <a href="javascript:void(0)">Theme</a> 
-            <div class="dropdown-content"> 
-              <a href="javascript:setTheme('dark')">Dark</a> 
-              <a href="javascript:setTheme('light')">Light</a> 
-            </div> 
-          </div> 
-        </div> 
-      </div> 
-    </div>
+<div class="navbar"> 
+  <a href="/" class="logo">Cascade</a>
+  <div class="menu">
+    <a href="games.html">Games</a>
+    <a href="javascript:void(0)" onclick="toggleTheme()">Theme</a>
+  </div>
+</div>
     <div class="main-text">
       <h1>Cascade</h1>
       <h3 id="phrase-container"></h3>

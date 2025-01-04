@@ -4,10 +4,8 @@ html, body {
   padding: 0;
   display: flex;
   flex-direction: column;
-  background-color: black;
-  color: white;
   font-family: "Quicksand", sans-serif;
-  overflow: auto;
+  overflow: scroll;
   scrollbar-color: white;
 }
 
@@ -79,8 +77,8 @@ h3 {
   margin: 0;
   position: sticky;
   top: 0;
-  left: 20px;
-  right: 20px;
+  left: 10px;
+  right: 10px;
   width: 100%;
   max-width: calc(100% - 20px);
   box-sizing: border-box;
@@ -113,78 +111,4 @@ h3 {
 }
 .menu a:hover {
   background-color: #058ea5;
-}
-
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropdown a {
-  font-size: 25px;
-  position: relative;
-  z-index: 2;
-}
-
-.dropdown a:hover {
-  background-color: #058ea5;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #0451a5;
-  min-width: 160px;
-  border-radius: 20px;
-  z-index: 1;
-  text-align: center;
-  padding: 10px;
-  top: calc(100% + 50px);
-  left: 40%;
-  transform: translateX(-50%);
-  box-sizing: border-box;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease;
-  overflow: hidden;
-}
-
-.dropdown-content::before {
-  content: "";
-  position: absolute;
-  top: -50px;
-  left: -50%;
-  width: 200%;
-  height: 50px;
-  background-color: transparent;
-}
-
-.dropdown-content a {
-  color: #fff;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
-}
-
-.dropdown-content a:hover {
-  background-color: #053a79;
-}
-
-.dropdown:hover .dropdown-content,
-.dropdown-content:hover {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-  animation: fadeIn 0.3s ease forwards;
-} 
-
-@keyframes fadeIn { 
-  from { 
-    opacity: 0; 
-  } 
-  to { 
-    opacity: 1; 
-  } 
 }
