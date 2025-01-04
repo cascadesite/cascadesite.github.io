@@ -66,8 +66,15 @@ function setTheme(theme) {
           el.style.color = '#fff';
       }
   });
+
+  localStorage.setItem('theme', theme);
 }
 
 window.onload = function() {
-  setTheme('dark');
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+      setTheme(savedTheme);
+  } else {
+      setTheme('dark');
+  }
 };
