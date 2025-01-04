@@ -112,3 +112,16 @@ h3 {
 .menu a:hover {
   background-color: #058ea5;
 }
+.popup {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.5s;
+  z-index: 1000; 
+}

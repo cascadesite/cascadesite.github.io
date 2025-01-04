@@ -48,6 +48,8 @@ async function getRandomPhrase() {
     phraseContainer.textContent = randomPhrase;
   });
 // Theme
+let themeChanged = false;
+
 function setTheme(theme) {
   if (theme === 'light') {
       document.body.style.backgroundColor = '#fff';
@@ -81,6 +83,10 @@ function setTheme(theme) {
       }
   });
 
+  if (themeChanged) {
+      showPopup(`Theme set to ${theme.charAt(0).toUpperCase() + theme.slice(1)}`);
+  }
+
   localStorage.setItem('theme', theme);
 }
 
@@ -96,7 +102,21 @@ function toggleTheme() {
       newTheme = 'system';
   }
 
+  themeChanged = true;
   setTheme(newTheme);
+}
+
+function showPopup(message) {
+  const popup = document.createElement('div');
+  popup.className = 'popup';
+  popup.textContent = message;
+  document.body.appendChild(popup);
+  setTimeout(() => {
+      popup.style.opacity = '0';
+  }, 2000);
+  setTimeout(() => {
+      document.body.removeChild(popup);
+  }, 3000);
 }
 
 window.onload = function() {
