@@ -127,3 +127,31 @@ window.onload = function() {
       setTheme('system');
   }
 };
+// Game Load
+async function loadGames() {
+    try {
+        const response = await fetch('games.json');
+        const games = await response.json();
+        const gamesList = document.getElementById('gamesList');
+        games.forEach(game => {
+            const gameCard = document.createElement('div');
+            gameCard.className = 'game-card';
+
+            const image = document.createElement('img');
+            image.src = game.image;
+            image.alt = game.name;
+            gameCard.appendChild(image);
+
+            const link = document.createElement('a');
+            link.href = game.path;
+            link.textContent = game.name;
+            gameCard.appendChild(link);
+
+            gamesList.appendChild(gameCard);
+        });
+    } catch (error) {
+        console.error('Error loading games:', error);
+    }
+}
+
+loadGames();
