@@ -133,18 +133,16 @@ async function loadGames() {
         const response = await fetch('games.json');
         const games = await response.json();
         const gamesList = document.getElementById('gamesList');
+        gamesList.innerHTML = '';
+
         games.forEach(game => {
             const gameCard = document.createElement('div');
             gameCard.className = 'game-card';
 
-            const image = document.createElement('img');
-            image.src = game.image;
-            image.alt = game.name;
-            gameCard.appendChild(image);
-
             const link = document.createElement('a');
             link.href = game.path;
             link.textContent = game.name;
+            link.className = 'game-link';
             gameCard.appendChild(link);
 
             gamesList.appendChild(gameCard);

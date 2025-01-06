@@ -117,12 +117,28 @@ h3 {
   transition: opacity 0.5s;
   z-index: 1000; 
 }
-.game-card { 
-  display: flex; 
-  align-items: center; 
-  margin-bottom: 20px; 
-} 
-.game-card img { 
-  max-width: 150px; 
-  margin-right: 20px; 
+.game-card {
+  background: #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+}
+
+.game-link {
+  text-decoration: none;
+  font-weight: bold;
+  color: #333;
+  font-size: 18px;
+}
+
+#gamesList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
