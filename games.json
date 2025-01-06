@@ -335,6 +335,7 @@
     { "name": "Pixel Cave", "path": "games/pixel-cave", "image": "games/pixel-cave/favicon.ico" },
     { "name": "Pizzeria Simulator", "path": "games/pizzeria-simulator", "image": "games/pizzeria-simulator/favicon.ico" },
     { "name": "Polybranch", "path": "games/polybranch", "image": "games/polybranch/favicon.ico" },
+    { "name": "Polytrack", "path": "games/polytrack", "image": "games/polytrack/favicon.ico" },
     { "name": "Popcat Classic", "path": "games/popcat-classic", "image": "games/popcat-classic/favicon.ico" },
     { "name": "Portal Flash", "path": "games/portalflash", "image": "games/portalflash/favicon.ico" },
     { "name": "Precision Client", "path": "games/precision-client", "image": "games/precision-client/favicon.ico" },
