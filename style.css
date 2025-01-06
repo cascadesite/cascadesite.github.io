@@ -118,11 +118,10 @@ h3 {
   z-index: 1000; 
 }
 .game-card {
-  background: #f0f0f0;
+  background: rgb(0,102,153);
   border-radius: 8px;
   padding: 16px;
   margin: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s;
 }
 
@@ -133,7 +132,6 @@ h3 {
 .game-link {
   text-decoration: none;
   font-weight: bold;
-  color: #333;
   font-size: 18px;
 }
 
