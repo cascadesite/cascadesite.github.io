@@ -23,9 +23,11 @@
     <div id="gamesList"></div>
     <div id="iframeContainer" class="iframe-container">
         <iframe id="gameIframe" frameborder="0"></iframe>
-    </div>
-    <button id="backBtn" class="back-btn" onclick="hideIframe()" style="display: none;">Back</button>
-    
+        <div id="buttonContainer" class="button-container" style="display: none;">
+            <button class="btn" onclick="toggleFullscreen()">Fullscreen</button>
+            <button class="btn" onclick="hideIframe()">Back</button>
+        </div>
+    </div>    
     <footer> 
       <img src="waves.svg" class="waves" />
     </footer>

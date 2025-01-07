@@ -159,12 +159,6 @@ function createGameCard(game) {
     link.onclick = () => showIframe(game.path);
     gameCard.appendChild(link);
 
-    const fullscreenBtn = document.createElement('button');
-    fullscreenBtn.textContent = 'Fullscreen';
-    fullscreenBtn.className = 'fullscreen-btn';
-    fullscreenBtn.onclick = () => toggleFullscreen();
-    gameCard.appendChild(fullscreenBtn);
-
     gamesList.appendChild(gameCard);
 }
 
@@ -184,14 +178,18 @@ function showIframe(path) {
     const iframe = document.getElementById('gameIframe');
     iframe.src = `/games/${path}`;
     iframeContainer.style.display = 'block';
-    document.getElementById('backBtn').style.display = 'inline-block';
+
+    const buttonContainer = document.getElementById('buttonContainer');
+    buttonContainer.style.display = 'flex';
 }
 
 function hideIframe() {
     const iframeContainer = document.getElementById('iframeContainer');
     iframeContainer.style.display = 'none';
     document.getElementById('gameIframe').src = '';
-    document.getElementById('backBtn').style.display = 'none';
+
+    const buttonContainer = document.getElementById('buttonContainer');
+    buttonContainer.style.display = 'none';
 }
 
 function toggleFullscreen() {
