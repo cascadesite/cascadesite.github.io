@@ -176,24 +176,26 @@ function filterGames(games) {
 function showIframe(path) {
     const iframeContainer = document.getElementById('iframeContainer');
     const iframe = document.getElementById('gameIframe');
+    const backgroundOverlay = document.getElementById('backgroundOverlay');
+
     iframe.src = `/${path}`;
     iframeContainer.style.display = 'block';
+    backgroundOverlay.style.display = 'block';
 
     const buttonContainer = document.getElementById('buttonContainer');
     buttonContainer.style.display = 'flex';
-
-    document.body.classList.add('blur-background');
 }
 
 function hideIframe() {
     const iframeContainer = document.getElementById('iframeContainer');
+    const backgroundOverlay = document.getElementById('backgroundOverlay');
+
     iframeContainer.style.display = 'none';
     document.getElementById('gameIframe').src = '';
+    backgroundOverlay.style.display = 'none';
 
     const buttonContainer = document.getElementById('buttonContainer');
     buttonContainer.style.display = 'none';
-
-    document.body.classList.remove('blur-background');
 }
 
 function toggleFullscreen() {
