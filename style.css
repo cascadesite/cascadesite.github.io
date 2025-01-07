@@ -155,6 +155,7 @@ h3 {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.9);
+  z-index: 999;
 }
 
 .iframe-container iframe {
@@ -164,7 +165,7 @@ h3 {
 }
 
 .button-container {
-  display: flex;
+  display: none;
   justify-content: center;
   margin-top: 10px;
 }
@@ -192,4 +193,8 @@ h3 {
   border-radius: 5px;
   box-sizing: border-box;
   text-align: center;
+}
+
+.blur-background {
+  filter: blur(5px);
 }
