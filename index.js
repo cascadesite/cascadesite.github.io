@@ -140,15 +140,50 @@ async function loadGames() {
             gameCard.className = 'game-card';
 
             const link = document.createElement('a');
-            link.href = game.path;
+            link.href = '#';
             link.textContent = game.name;
             link.className = 'game-link';
+            link.onclick = () => showIframe(game.path);
             gameCard.appendChild(link);
+
+            const fullscreenBtn = document.createElement('button');
+            fullscreenBtn.textContent = 'Fullscreen';
+            fullscreenBtn.className = 'fullscreen-btn';
+            fullscreenBtn.onclick = () => toggleFullscreen();
+            gameCard.appendChild(fullscreenBtn);
 
             gamesList.appendChild(gameCard);
         });
     } catch (error) {
         console.error('Error loading games:', error);
+    }
+}
+
+function showIframe(path) {
+    const iframeContainer = document.getElementById('iframeContainer');
+    const iframe = document.getElementById('gameIframe');
+    iframe.src = `/games/${path}`;
+    iframeContainer.style.display = 'block';
+    document.getElementById('backBtn').style.display = 'inline-block';
+}
+
+function hideIframe() {
+    const iframeContainer = document.getElementById('iframeContainer');
+    iframeContainer.style.display = 'none';
+    document.getElementById('gameIframe').src = '';
+    document.getElementById('backBtn').style.display = 'none';
+}
+
+function toggleFullscreen() {
+    const iframe = document.getElementById('gameIframe');
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+        iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
     }
 }
 
