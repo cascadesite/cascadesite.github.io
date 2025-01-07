@@ -135,6 +135,8 @@ async function loadGames() {
         const gamesList = document.getElementById('gamesList');
         const searchInput = document.getElementById('searchInput');
 
+        games.sort((a, b) => a.name.localeCompare(b.name));
+
         searchInput.addEventListener('input', () => filterGames(games));
 
         gamesList.innerHTML = '';

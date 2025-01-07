@@ -152,6 +152,12 @@ h3 {
   text-align: center;
 }
 
+.search-container {
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
+}
+
 .iframe-container {
   position: fixed;
   top: 50%;
