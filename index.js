@@ -133,30 +133,50 @@ async function loadGames() {
         const response = await fetch('games.json');
         const games = await response.json();
         const gamesList = document.getElementById('gamesList');
+        const searchInput = document.getElementById('searchInput');
+
+        searchInput.addEventListener('input', () => filterGames(games));
+
         gamesList.innerHTML = '';
-
         games.forEach(game => {
-            const gameCard = document.createElement('div');
-            gameCard.className = 'game-card';
-
-            const link = document.createElement('a');
-            link.href = '#';
-            link.textContent = game.name;
-            link.className = 'game-link';
-            link.onclick = () => showIframe(game.path);
-            gameCard.appendChild(link);
-
-            const fullscreenBtn = document.createElement('button');
-            fullscreenBtn.textContent = 'Fullscreen';
-            fullscreenBtn.className = 'fullscreen-btn';
-            fullscreenBtn.onclick = () => toggleFullscreen();
-            gameCard.appendChild(fullscreenBtn);
-
-            gamesList.appendChild(gameCard);
+            createGameCard(game);
         });
     } catch (error) {
         console.error('Error loading games:', error);
     }
+}
+
+function createGameCard(game) {
+    const gamesList = document.getElementById('gamesList');
+
+    const gameCard = document.createElement('div');
+    gameCard.className = 'game-card';
+
+    const link = document.createElement('a');
+    link.href = '#';
+    link.textContent = game.name;
+    link.className = 'game-link';
+    link.onclick = () => showIframe(game.path);
+    gameCard.appendChild(link);
+
+    const fullscreenBtn = document.createElement('button');
+    fullscreenBtn.textContent = 'Fullscreen';
+    fullscreenBtn.className = 'fullscreen-btn';
+    fullscreenBtn.onclick = () => toggleFullscreen();
+    gameCard.appendChild(fullscreenBtn);
+
+    gamesList.appendChild(gameCard);
+}
+
+function filterGames(games) {
+    const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+    const filteredGames = games.filter(game => game.name.toLowerCase().includes(searchQuery));
+
+    const gamesList = document.getElementById('gamesList');
+    gamesList.innerHTML = '';
+    filteredGames.forEach(game => {
+        createGameCard(game);
+    });
 }
 
 function showIframe(path) {
