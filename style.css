@@ -118,11 +118,15 @@ h3 {
   z-index: 1000; 
 }
 .game-card {
-  background: rgb(0,102,153);
+  background: #006699;
   border-radius: 8px;
   padding: 16px;
   margin: 8px;
-  transition: transform 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .game-card:hover {
@@ -134,12 +138,16 @@ h3 {
   font-weight: bold;
   color: #fff;
   font-size: 18px;
+  margin-top: 10px;
 }
 
 #gamesList {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  padding: 0;
+  list-style: none;
+  gap: 16px;
 }
 
 .search-input {

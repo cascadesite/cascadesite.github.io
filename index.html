@@ -6,18 +6,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="logo.png">
     <title>Cascade</title>
-    <style>
-      body {
-        background-color: black;
-        color: white;
-      }
-    </style>
   </head>
   <body>
-    <h1>Cascade</h1>
-    <h3>Coming Soon...</h3>
+    <div class="navbar-container"> 
+<div class="navbar"> 
+  <a href="/" class="logo">Cascade</a>
+  <div class="menu">
+    <a href="games.html">Games</a>
+    <a href="javascript:void(0)" onclick="toggleTheme()">Theme</a>
+  </div>
+</div>
+    <div class="main-text">
+      <h1>Cascade</h1>
+      <h3 id="phrase-container"></h3>
+    </div>
     <footer> 
       <img src="waves.svg" class="waves" />
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
