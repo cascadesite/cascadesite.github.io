@@ -130,10 +130,10 @@ h3 {
 
 .game-background {
   position: absolute;
-  top: 12px;
-  left: 12px;
-  width: 128px;
-  height: 128px;
+  top: -8px;
+  left: -8px;
+  width: 136px;
+  height: 136px;
   background: linear-gradient(90deg, rgba(0,102,153,1) 35%, rgba(6,147,227,1) 69%, rgba(6,172,227,1) 100%);
   border-radius: 8px;
   z-index: 1;
@@ -156,7 +156,7 @@ h3 {
   width: 136px;
   height: 136px;
   border-radius: 8px;
-  background-color: black;
+  background-color: gray;
   color: white;
   display: flex;
   align-items: center;
