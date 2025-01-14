@@ -158,12 +158,19 @@ function createGameCard(game) {
     background.className = 'game-background';
     gameCard.appendChild(background);
 
-    const img = document.createElement('img');
-    img.src = game.image || 'noimage.png';
-    img.alt = game.name;
-    img.className = 'game-image';
-    img.onclick = () => showIframe(game.path);
-    gameCard.appendChild(img);
+    if (game.image) {
+        const img = document.createElement('img');
+        img.src = game.image;
+        img.alt = game.name;
+        img.className = 'game-image';
+        img.onclick = () => showIframe(game.path);
+        gameCard.appendChild(img);
+    } else {
+        const noImageText = document.createElement('div');
+        noImageText.className = 'no-image-text';
+        noImageText.textContent = game.name;
+        gameCard.appendChild(noImageText);
+    }
 
     const link = document.createElement('a');
     link.href = '#';
