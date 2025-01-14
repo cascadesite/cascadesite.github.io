@@ -139,6 +139,17 @@ h3 {
   color: #fff;
   font-size: 18px;
   margin-top: 10px;
+  visibility: hidden;
+}
+
+.game-card:hover .game-link {
+  visibility: visible;
+}
+
+.game-image {
+  width: 128px;
+  height: 128px;
+  border-radius: 8px;
 }
 
 #gamesList {

@@ -154,6 +154,12 @@ function createGameCard(game) {
     const gameCard = document.createElement('div');
     gameCard.className = 'game-card';
 
+    const img = document.createElement('img');
+    img.src = game.image || 'noimage.png';
+    img.alt = game.name;
+    img.className = 'game-image';
+    gameCard.appendChild(img);
+
     const link = document.createElement('a');
     link.href = '#';
     link.textContent = game.name;
