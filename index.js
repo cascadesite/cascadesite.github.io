@@ -189,6 +189,17 @@ function createGameCard(game) {
     gamesList.appendChild(gameCard);
 }
 
+function filterGames(games) {
+    const searchQuery = document.getElementById('searchInput').value.toLowerCase();
+    const filteredGames = games.filter(game => game.name.toLowerCase().includes(searchQuery));
+
+    const gamesList = document.getElementById('gamesList');
+    gamesList.innerHTML = '';
+    filteredGames.forEach(game => {
+        createGameCard(game);
+    });
+}
+
 function showIframe(path) {
     const iframeContainer = document.getElementById('iframeContainer');
     const iframe = document.getElementById('gameIframe');
