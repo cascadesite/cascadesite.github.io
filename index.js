@@ -165,8 +165,15 @@ function createGameCard(game) {
     link.textContent = game.name;
     link.className = 'game-link';
     link.onclick = () => showIframe(game.path);
-    gameCard.appendChild(link);
 
+    if (game.name.length > 15) {
+        link.classList.add('long-name');
+    }
+    if (game.name.length > 25) {
+        link.classList.add('very-long-name');
+    }
+
+    gameCard.appendChild(link);
     gamesList.appendChild(gameCard);
 }
 
