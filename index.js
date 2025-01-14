@@ -154,6 +154,10 @@ function createGameCard(game) {
     const gameCard = document.createElement('div');
     gameCard.className = 'game-card';
 
+    const background = document.createElement('div');
+    background.className = 'game-background';
+    gameCard.appendChild(background);
+
     const img = document.createElement('img');
     img.src = game.image || 'noimage.png';
     img.alt = game.name;
@@ -176,17 +180,6 @@ function createGameCard(game) {
 
     gameCard.appendChild(link);
     gamesList.appendChild(gameCard);
-}
-
-function filterGames(games) {
-    const searchQuery = document.getElementById('searchInput').value.toLowerCase();
-    const filteredGames = games.filter(game => game.name.toLowerCase().includes(searchQuery));
-
-    const gamesList = document.getElementById('gamesList');
-    gamesList.innerHTML = '';
-    filteredGames.forEach(game => {
-        createGameCard(game);
-    });
 }
 
 function showIframe(path) {
