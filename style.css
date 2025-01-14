@@ -117,7 +117,6 @@ h3 {
   transition: opacity 0.5s;
   z-index: 1000; 
 }
-
 .game-card {
   background: #006699;
   border-radius: 8px;
@@ -130,7 +129,6 @@ h3 {
   text-align: center;
   width: 128px;
   height: 180px;
-  clip-path: path('M0,30 Q30,60 60,30 T120,30 V150 H0 Z');
 }
 
 .game-card:hover {
@@ -141,9 +139,13 @@ h3 {
   text-decoration: none;
   font-weight: bold;
   color: #fff;
-  font-size: 16px;
+  font-size: 18px;
   margin-top: 10px;
   visibility: hidden;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .game-card:hover .game-link {
