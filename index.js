@@ -158,6 +158,7 @@ function createGameCard(game) {
     img.src = game.image || 'noimage.png';
     img.alt = game.name;
     img.className = 'game-image';
+    img.onclick = () => showIframe(game.path);
     gameCard.appendChild(img);
 
     const link = document.createElement('a');
