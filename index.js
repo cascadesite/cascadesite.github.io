@@ -158,6 +158,10 @@ function createGameCard(game) {
     background.className = 'game-background';
     gameCard.appendChild(background);
 
+    const imageBg = document.createElement('div');
+    imageBg.className = 'game-image-bg';
+    gameCard.appendChild(imageBg);
+
     if (game.image) {
         const img = document.createElement('img');
         img.src = game.image;
@@ -170,6 +174,7 @@ function createGameCard(game) {
         noImageText.className = 'no-image-text';
         noImageText.textContent = game.name;
         gameCard.appendChild(noImageText);
+        noImageText.onclick = () => showIframe(game.path);
     }
 
     const link = document.createElement('a');

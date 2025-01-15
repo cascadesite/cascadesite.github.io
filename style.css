@@ -144,12 +144,23 @@ h3 {
   opacity: 0.6;
 }
 
+.game-image-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 136px;
+  height: 136px;
+  background: gray;
+  border-radius: 8px;
+  z-index: 2;
+}
+
 .game-image {
   width: 136px;
   height: 136px;
   border-radius: 8px;
   cursor: pointer;
-  z-index: 2;
+  z-index: 3;
 }
 
 .no-image-text {
@@ -204,9 +215,7 @@ h3 {
   margin: 20px 0;
   padding: 10px;
   width: 50%;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
+  border-radius: 15px;
   text-align: center;
 }
 
