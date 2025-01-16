@@ -213,7 +213,6 @@ function showIframe(path) {
     iframe.src = `/${path}`;
     iframeContainer.style.display = 'block';
     backgroundOverlay.style.display = 'block';
-    document.body.classList.add('blur-background');
 
     const buttonContainer = document.getElementById('buttonContainer');
     buttonContainer.style.display = 'flex';
@@ -226,8 +225,22 @@ function hideIframe() {
     iframeContainer.style.display = 'none';
     document.getElementById('gameIframe').src = '';
     backgroundOverlay.style.display = 'none';
-    document.body.classList.remove('blur-background');
 
     const buttonContainer = document.getElementById('buttonContainer');
     buttonContainer.style.display = 'none';
 }
+
+function toggleFullscreen() {
+    const iframe = document.getElementById('gameIframe');
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.mozRequestFullScreen) {
+        iframe.mozRequestFullScreen();
+    } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+    } else if (iframe.msRequestFullscreen) {
+        iframe.msRequestFullscreen();
+    }
+}
+
+loadGames();
