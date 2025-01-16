@@ -1,7 +1,7 @@
 [
     { "name": "1", "path": "games/1", "image": "games/1/meta/apple-touch-icon.png" },
     { "name": "10 Minutes Till Dawn", "path": "games/10-minutes-till-dawn", "image": "games/10-minutes-till-dawn/splash.png" },
-    { "name": "100ng", "path": "games/100ng", "image": "games/100ng/100ng.jpg" },
+    { "name": "100 Player Pong", "path": "games/100ng", "image": "games/100ng/100ng.jpg" },
     { "name": "1v1lol", "path": "games/1v1lol", "image": "games/1v1lol/splash.png" },
     { "name": "1v1space", "path": "games/1v1space", "image": "games/1v1space/splash.png" },
     { "name": "2020 Game", "path": "games/2020-game", "image": "games/2020-game/icon.jpeg" },

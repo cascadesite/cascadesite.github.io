@@ -230,10 +230,10 @@ h3 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
-  height: 80%;
+  width: 85%;
+  height: 85%;
   display: none;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   background-color: rgba(255, 255, 255, 0.9);
@@ -242,50 +242,35 @@ h3 {
 
 .iframe-container iframe {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 40px);
   border: none;
 }
 
-.button-container {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 10px;
-  right: 10px;
-  transform: translateY(-50%);
-  z-index: 1000;
+.button-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  background: linear-gradient(90deg, rgba(0,102,153,1) 35%, rgba(6,147,227,1) 69%, rgba(6,172,227,1) 100%);
+  border-radius: 0 0 15px 15px;
+  display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.btn {
-  width: 70px;
-  height: 70px;
-  background-color: #007bff;
+.button-bar .btn {
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
   border: none;
-  border-radius: 5px;
+  color: white;
+  font-size: 20px;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
-  font-size: 20px;
 }
 
-.btn:hover {
-  background-color: #0056b3;
-}
-
-.blur-background {
-  filter: blur(5px);
-}
-
-.background-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 998;
-  display: none;
+.button-bar .btn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
