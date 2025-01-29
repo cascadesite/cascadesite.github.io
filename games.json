@@ -374,5 +374,12 @@
     { "name": "X Trial Racing", "path": "games/x-trial-racing", "image": "games/x-trial-racing/splash.png" },
     { "name": "Xx142 B2exe", "path": "games/xx142-b2exe", "image": "games/xx142-b2exe/splash.png" },
     { "name": "Yoshi Fabrication", "path": "games/yoshifabrication", "image": "games/yoshifabrication/icons/icon-256.png" },
+    { "name": "Riddle School", "path": "games2/riddle-school", "image": "games2/riddle-school/image.png" },
+    { "name": "Riddle School 2", "path": "games2/riddle-school2", "image": "games2/riddle-school2/image.png" },
+    { "name": "Riddle School 3", "path": "games2/riddle-school3", "image": "games2/riddle-school3/image.png" },
+    { "name": "Riddle School 4", "path": "games2/riddle-school4", "image": "games2/riddle-school4/image.png" },
+    { "name": "Riddle School 5", "path": "games2/riddle-school5", "image": "games2/riddle-school5/image.png" },
+    { "name": "Riddle Transfer", "path": "games2/riddle-transfer", "image": "games2/riddle-transfer/image.png" },
+    { "name": "Riddle Transfer 2", "path": "games2/riddle-transfer2", "image": "games2/riddle-transfer2/image.png" },
     { "name": "Zombocalypse", "path": "games/zombocalypse", "image": "" }
 ]
