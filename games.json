@@ -381,5 +381,8 @@
     { "name": "Riddle School 5", "path": "games2/riddle-school5", "image": "games2/riddle-school5/image.png" },
     { "name": "Riddle Transfer", "path": "games2/riddle-transfer", "image": "games2/riddle-transfer/image.png" },
     { "name": "Riddle Transfer 2", "path": "games2/riddle-transfer2", "image": "games2/riddle-transfer2/image.png" },
+    { "name": "Learn To Fly 3", "path": "games2/learn-to-fly3", "image": "games2/learn-to-fly3/image.png" },
+    { "name": "Vex", "path": "games2/vex", "image": "games2/vex/image.png" },
+    { "name": "Vex 2", "path": "games2/vex2", "image": "games2/vex2/image.png" },
     { "name": "Zombocalypse", "path": "games/zombocalypse", "image": "" }
 ]
