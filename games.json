@@ -77,7 +77,7 @@
     { "name": "Cluster Rush", "path": "games/cluster-rush", "image": "games/cluster-rush/splash.png" },
     { "name": "Color Switch 2 Challenges", "path": "games/color-switch-2-challenges", "image": "games/color-switch-2-challenges/icon.png" },
     { "name": "Connect 3", "path": "games/connect3", "image": "games/connect3/connect3.png" },
-    { "name": "Cookie Clicker", "path": "games/cookie-clicker", "image": "games/cookie-clicker/img/icon.png" },
+    { "name": "Cookie Clicker", "path": "games2/cookie-clicker", "image": "games/cookie-clicker/img/icon.png" },
     { "name": "Core Ball", "path": "games/core-ball", "image": "games/core-ball/pr_source.png" },
     { "name": "Craftmine", "path": "games/craftmine", "image": "games/craftmine/images/craftmine.png" },
     { "name": "Creative Kill Chamber", "path": "games/creativekillchamber", "image": "games/creativekillchamber/creativekillchamber.jpg" },
