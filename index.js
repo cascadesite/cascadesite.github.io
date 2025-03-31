@@ -51,19 +51,24 @@ document.addEventListener('DOMContentLoaded', async () => {
 let themeChanged = false;
 
 function setTheme(theme) {
+    const searchInput = document.getElementById('searchInput');
     if (theme === 'light') {
         document.body.style.backgroundColor = '#fff';
         document.body.style.color = '#000';
+        searchInput.style.border = '1px solid #000';
     } else if (theme === 'dark') {
         document.body.style.backgroundColor = '#000';
         document.body.style.color = '#fff';
+        searchInput.style.border = '1px solid #fff';
     } else if (theme === 'system') {
         if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.style.backgroundColor = '#000';
             document.body.style.color = '#fff';
+            searchInput.style.border = '1px solid #fff';
         } else {
             document.body.style.backgroundColor = '#fff';
             document.body.style.color = '#000';
+            searchInput.style.border = '1px solid #000';
         }
     }
 
@@ -108,7 +113,7 @@ function toggleTheme() {
 
 function showPopup(message) {
     const popup = document.createElement('div');
-    popup.className = 'popup fixed top-5 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 rounded-lg opacity-100 transition-opacity duration-500';
+    popup.className = 'popup fixed top-5 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 rounded-lg opacity-100 transition-opacity duration-500 z-50';
     popup.textContent = message;
     document.body.appendChild(popup);
     setTimeout(() => {
