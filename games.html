@@ -15,33 +15,33 @@
       }
     </style>
 </head>
-<body class="flex flex-col h-full overflow-scroll transition-colors duration-300">
-    <div class="navbar-container w-full box-border z-100"> 
-        <div class="navbar flex justify-between items-center bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400 p-4 rounded-b-lg sticky top-0 w-full max-w-full box-border"> 
-            <a href="/" class="logo text-white text-4xl font-bold hover:bg-blue-700">Cascade</a>
-            <div class="menu flex items-center">
+<body class="flex flex-col min-h-screen overflow-scroll transition-colors duration-300">
+    <div class="w-full z-10">
+        <div class="flex justify-between items-center bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400 p-4 rounded-b-lg sticky top-0 mx-2">
+            <a href="/" class="text-white text-4xl font-bold hover:bg-blue-700 p-2 rounded">Cascade</a>
+            <div class="flex items-center">
                 <a href="games.html" class="text-white text-2xl p-4 rounded-lg hover:bg-blue-400">Games</a>
                 <a href="javascript:void(0)" onclick="toggleTheme()" class="text-white text-2xl p-4 rounded-lg hover:bg-blue-400">Theme</a>
             </div>
         </div>
     </div>
-    <div class="main-text relative z-10 text-white text-center p-5">
+    <div class="flex-grow flex flex-col justify-center items-center text-white text-center p-5 relative z-10">
         <h1 class="text-9xl">Games</h1>
     </div>
-    <div class="search-container flex justify-center items-center">
-        <input type="text" id="searchInput" class="search-input my-5 p-3 w-1/2 rounded-xl text-center" placeholder="Search for a game...">
+    <div class="flex justify-center items-center mt-4">
+        <input type="text" id="searchInput" class="my-5 p-3 w-1/2 rounded-xl text-center" placeholder="Search for a game...">
     </div>
     <div id="gamesList" class="flex flex-wrap justify-around p-0 list-none gap-4"></div>
-    <div id="backgroundOverlay" class="background-overlay fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 hidden"></div>
-    <div id="iframeContainer" class="iframe-container fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6 h-5/6 hidden rounded-xl overflow-hidden z-999 bg-white">
+    <div id="backgroundOverlay" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 hidden"></div>
+    <div id="iframeContainer" class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-5/6 h-5/6 hidden rounded-xl overflow-hidden z-50 bg-white">
         <iframe id="gameIframe" class="w-full h-[calc(100%-40px)] border-none"></iframe>
-        <div class="button-bar absolute bottom-0 w-full h-10 bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400 rounded-b-xl flex justify-between items-center">
-            <button class="btn w-10 h-10 bg-transparent border-none text-white text-2xl cursor-pointer flex items-center justify-center hover:bg-white hover:bg-opacity-20" onclick="hideIframe()">&lt;</button>
-            <button class="btn w-10 h-10 bg-transparent border-none text-white text-2xl cursor-pointer flex items-center justify-center hover:bg-white hover:bg-opacity-20" onclick="toggleFullscreen()">⛶</button>
+        <div class="absolute bottom-0 w-full h-10 bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400 rounded-b-xl flex justify-between items-center">
+            <button class="w-10 h-10 bg-transparent border-none text-white text-2xl cursor-pointer flex items-center justify-center hover:bg-white hover:bg-opacity-20" onclick="hideIframe()">&lt;</button>
+            <button class="w-10 h-10 bg-transparent border-none text-white text-2xl cursor-pointer flex items-center justify-center hover:bg-white hover:bg-opacity-20" onclick="toggleFullscreen()">⛶</button>
         </div>
-    </div>    
+    </div>
     <footer class="mt-auto w-full text-center">
-        <img src="waves.svg" class="waves w-full h-auto" />
+        <img src="waves.svg" class="w-full h-auto" />
     </footer>
     <script src="index.js"></script>
 </body>
