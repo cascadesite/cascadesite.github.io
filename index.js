@@ -113,7 +113,7 @@ function toggleTheme() {
 
 function showPopup(message) {
     const popup = document.createElement('div');
-    popup.className = 'popup fixed top-5 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 rounded-lg opacity-100 transition-opacity duration-500 z-50';
+    popup.className = 'popup';
     popup.textContent = message;
     document.body.appendChild(popup);
     setTimeout(() => {
