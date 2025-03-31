@@ -108,7 +108,7 @@ function toggleTheme() {
 
 function showPopup(message) {
     const popup = document.createElement('div');
-    popup.className = 'popup';
+    popup.className = 'popup fixed top-5 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 rounded-lg opacity-100 transition-opacity duration-500';
     popup.textContent = message;
     document.body.appendChild(popup);
     setTimeout(() => {
@@ -152,26 +152,43 @@ function createGameCard(game) {
     const gamesList = document.getElementById('gamesList');
 
     const gameCard = document.createElement('div');
-    gameCard.className = 'game-card relative w-34 h-48 m-2 flex flex-col items-center text-center bg-white rounded-lg shadow-md overflow-hidden';
+    gameCard.className = 'game-card relative w-34 h-48 m-2 flex flex-col items-center text-center';
+    gameCard.style.width = '136px';
+    gameCard.style.height = '188px';
+    gameCard.style.margin = '8px';
 
     const background = document.createElement('div');
-    background.className = 'game-background absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400 rounded-lg z-0 transition-opacity duration-300';
+    background.className = 'game-background absolute top-0 left-0 w-full h-34 bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400 rounded-lg z-0 transition-opacity duration-300';
+    background.style.width = '136px';
+    background.style.height = '136px';
+    background.style.top = '-8px';
+    background.style.left = '-8px';
+    background.style.borderRadius = '8px';
     gameCard.appendChild(background);
 
     const imageBg = document.createElement('div');
-    imageBg.className = 'game-image-bg absolute top-0 left-0 w-full h-3/4 bg-gray-500 rounded-lg z-1';
+    imageBg.className = 'game-image-bg absolute top-0 left-0 w-full h-34 bg-gray-500 rounded-lg z-1';
+    imageBg.style.width = '136px';
+    imageBg.style.height = '136px';
+    imageBg.style.borderRadius = '8px';
     gameCard.appendChild(imageBg);
 
     if (game.image) {
         const img = document.createElement('img');
         img.src = game.image;
         img.alt = game.name;
-        img.className = 'game-image w-full h-3/4 rounded-lg cursor-pointer z-2 object-cover';
+        img.className = 'game-image w-full h-34 rounded-lg cursor-pointer z-2 object-cover';
+        img.style.width = '136px';
+        img.style.height = '136px';
+        img.style.borderRadius = '8px';
         img.onclick = () => showIframe(game.path);
         gameCard.appendChild(img);
     } else {
         const noImageText = document.createElement('div');
-        noImageText.className = 'no-image-text w-full h-3/4 bg-gray-500 text-white flex items-center justify-center rounded-lg cursor-pointer z-2';
+        noImageText.className = 'no-image-text w-full h-34 bg-gray-500 text-white flex items-center justify-center rounded-lg cursor-pointer z-2';
+        noImageText.style.width = '136px';
+        noImageText.style.height = '136px';
+        noImageText.style.borderRadius = '8px';
         noImageText.textContent = game.name;
         gameCard.appendChild(noImageText);
         noImageText.onclick = () => showIframe(game.path);
@@ -180,14 +197,21 @@ function createGameCard(game) {
     const link = document.createElement('a');
     link.href = '#';
     link.textContent = game.name;
-    link.className = 'game-link text-black text-lg font-bold mt-2 z-2 w-full truncate';
+    link.className = 'game-link text-white text-lg font-bold mt-2 z-2 w-full truncate';
+    link.style.marginTop = '10px';
+    link.style.visibility = 'hidden';
+    link.style.overflow = 'hidden';
+    link.style.textOverflow = 'ellipsis';
+    link.style.whiteSpace = 'nowrap';
     link.onclick = () => showIframe(game.path);
 
     if (game.name.length > 15) {
         link.classList.add('long-name');
+        link.style.fontSize = '14px';
     }
     if (game.name.length > 25) {
         link.classList.add('very-long-name');
+        link.style.fontSize = '12px';
     }
 
     gameCard.appendChild(link);
@@ -195,9 +219,11 @@ function createGameCard(game) {
 
     gameCard.addEventListener('mouseover', () => {
         background.style.opacity = '0.6';
+        link.style.visibility = 'visible';
     });
     gameCard.addEventListener('mouseout', () => {
         background.style.opacity = '1';
+        link.style.visibility = 'hidden';
     });
 }
 
