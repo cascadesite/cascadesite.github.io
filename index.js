@@ -24,109 +24,109 @@ function loadEruda() {
 // Random Phrase
 async function getRandomPhrase() {
     try {
-      const response = await fetch('phrases.json');
-      const phrases = await response.json();
+        const response = await fetch('phrases.json');
+        const phrases = await response.json();
       
-      const ultraRareIndex = phrases.length - 1;
-      const randomNumber = Math.random();
+        const ultraRareIndex = phrases.length - 1;
+        const randomNumber = Math.random();
       
-      if (randomNumber <= 0.01) {
-        return phrases[ultraRareIndex];
-      } else {
-        const randomIndex = Math.floor(Math.random() * (phrases.length - 1));
-        return phrases[randomIndex];
-      }
+        if (randomNumber <= 0.01) {
+            return phrases[ultraRareIndex];
+        } else {
+            const randomIndex = Math.floor(Math.random() * (phrases.length - 1));
+            return phrases[randomIndex];
+        }
     } catch (error) {
-      console.error('Error fetching phrases:', error);
-      return "An error occurred. Please try again.";
+        console.error('Error fetching phrases:', error);
+        return "An error occurred. Please try again.";
     }
-  }
+}
   
-  document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const phraseContainer = document.getElementById('phrase-container');
     const randomPhrase = await getRandomPhrase();
     phraseContainer.textContent = randomPhrase;
-  });
-      // Theme
-      let themeChanged = false;
+});
+// Theme
+let themeChanged = false;
 
-      function setTheme(theme) {
-        if (theme === 'light') {
-            document.body.style.backgroundColor = '#fff';
-            document.body.style.color = '#000';
-        } else if (theme === 'dark') {
+function setTheme(theme) {
+    if (theme === 'light') {
+        document.body.style.backgroundColor = '#fff';
+        document.body.style.color = '#000';
+    } else if (theme === 'dark') {
+        document.body.style.backgroundColor = '#000';
+        document.body.style.color = '#fff';
+    } else if (theme === 'system') {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             document.body.style.backgroundColor = '#000';
             document.body.style.color = '#fff';
+        } else {
+            document.body.style.backgroundColor = '#fff';
+            document.body.style.color = '#000';
+        }
+    }
+
+    const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, span, div, li, td, th');
+
+    textElements.forEach(function(el) {
+        if (theme === 'light') {
+            el.style.color = '#000';
+        } else if (theme === 'dark') {
+            el.style.color = '#fff';
         } else if (theme === 'system') {
             if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                document.body.style.backgroundColor = '#000';
-                document.body.style.color = '#fff';
-            } else {
-                document.body.style.backgroundColor = '#fff';
-                document.body.style.color = '#000';
-            }
-        }
-
-        const textElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, a, span, div, li, td, th');
-
-        textElements.forEach(function(el) {
-            if (theme === 'light') {
-                el.style.color = '#000';
-            } else if (theme === 'dark') {
                 el.style.color = '#fff';
-            } else if (theme === 'system') {
-                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                    el.style.color = '#fff';
-                } else {
-                    el.style.color = '#000';
-                }
+            } else {
+                el.style.color = '#000';
             }
-        });
-
-        if (themeChanged) {
-            showPopup(`Theme set to ${theme.charAt(0).toUpperCase() + theme.slice(1)}`);
         }
+    });
 
-        localStorage.setItem('theme', theme);
-      }
+    if (themeChanged) {
+        showPopup(`Theme set to ${theme.charAt(0).toUpperCase() + theme.slice(1)}`);
+    }
 
-      function toggleTheme() {
-        const currentTheme = localStorage.getItem('theme') || 'system';
-        let newTheme;
+    localStorage.setItem('theme', theme);
+}
 
-        if (currentTheme === 'system') {
-            newTheme = 'light';
-        } else if (currentTheme === 'light') {
-            newTheme = 'dark';
-        } else {
-            newTheme = 'system';
-        }
+function toggleTheme() {
+    const currentTheme = localStorage.getItem('theme') || 'system';
+    let newTheme;
 
-        themeChanged = true;
-        setTheme(newTheme);
-      }
+    if (currentTheme === 'system') {
+        newTheme = 'light';
+    } else if (currentTheme === 'light') {
+        newTheme = 'dark';
+    } else {
+        newTheme = 'system';
+    }
 
-      function showPopup(message) {
-        const popup = document.createElement('div');
-        popup.className = 'popup fixed top-5 left-1/2 transform -translate-x-1/2 bg-gray-800 text-white p-3 rounded-lg opacity-100 transition-opacity duration-500';
-        popup.textContent = message;
-        document.body.appendChild(popup);
-        setTimeout(() => {
-            popup.style.opacity = '0';
-        }, 2000);
-        setTimeout(() => {
-            document.body.removeChild(popup);
-        }, 3000);
-      }
+    themeChanged = true;
+    setTheme(newTheme);
+}
 
-      window.onload = function() {
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            setTheme(savedTheme);
-        } else {
-            setTheme('system');
-        }
-      };
+function showPopup(message) {
+    const popup = document.createElement('div');
+    popup.className = 'popup';
+    popup.textContent = message;
+    document.body.appendChild(popup);
+    setTimeout(() => {
+        popup.style.opacity = '0';
+    }, 2000);
+    setTimeout(() => {
+        document.body.removeChild(popup);
+    }, 3000);
+}
+
+window.onload = function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        setTheme(savedTheme);
+    } else {
+        setTheme('system');
+    }
+};
 // Game Load
 async function loadGames() {
     try {
@@ -152,26 +152,26 @@ function createGameCard(game) {
     const gamesList = document.getElementById('gamesList');
 
     const gameCard = document.createElement('div');
-    gameCard.className = 'game-card';
+    gameCard.className = 'game-card relative w-34 h-48 m-2 flex flex-col items-center text-center bg-white rounded-lg shadow-md overflow-hidden';
 
     const background = document.createElement('div');
-    background.className = 'game-background';
+    background.className = 'game-background absolute top-0 left-0 w-full h-full bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400 rounded-lg z-0 transition-opacity duration-300';
     gameCard.appendChild(background);
 
     const imageBg = document.createElement('div');
-    imageBg.className = 'game-image-bg';
+    imageBg.className = 'game-image-bg absolute top-0 left-0 w-full h-3/4 bg-gray-500 rounded-lg z-1';
     gameCard.appendChild(imageBg);
 
     if (game.image) {
         const img = document.createElement('img');
         img.src = game.image;
         img.alt = game.name;
-        img.className = 'game-image';
+        img.className = 'game-image w-full h-3/4 rounded-lg cursor-pointer z-2 object-cover';
         img.onclick = () => showIframe(game.path);
         gameCard.appendChild(img);
     } else {
         const noImageText = document.createElement('div');
-        noImageText.className = 'no-image-text';
+        noImageText.className = 'no-image-text w-full h-3/4 bg-gray-500 text-white flex items-center justify-center rounded-lg cursor-pointer z-2';
         noImageText.textContent = game.name;
         gameCard.appendChild(noImageText);
         noImageText.onclick = () => showIframe(game.path);
@@ -180,7 +180,7 @@ function createGameCard(game) {
     const link = document.createElement('a');
     link.href = '#';
     link.textContent = game.name;
-    link.className = 'game-link';
+    link.className = 'game-link text-black text-lg font-bold mt-2 z-2 w-full truncate';
     link.onclick = () => showIframe(game.path);
 
     if (game.name.length > 15) {
@@ -192,6 +192,13 @@ function createGameCard(game) {
 
     gameCard.appendChild(link);
     gamesList.appendChild(gameCard);
+
+    gameCard.addEventListener('mouseover', () => {
+        background.style.opacity = '0.6';
+    });
+    gameCard.addEventListener('mouseout', () => {
+        background.style.opacity = '1';
+    });
 }
 
 function filterGames(games) {
