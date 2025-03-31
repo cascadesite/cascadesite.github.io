@@ -1,28 +1,37 @@
-<html>
-  <head>
-    <link rel="stylesheet" href="style.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cascade</title>
+    <link href="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="logo.png">
-    <title>Cascade</title>
-  </head>
-  <body>
-    <div class="navbar-container"> 
-<div class="navbar"> 
-  <a href="/" class="logo">Cascade</a>
-  <div class="menu">
-    <a href="games.html">Games</a>
-    <a href="javascript:void(0)" onclick="toggleTheme()">Theme</a>
-  </div>
-</div>
-    <div class="main-text">
-      <h1>Cascade</h1>
-      <h3 id="phrase-container"></h3>
+    <style>
+      body {
+        font-family: 'Quicksand', sans-serif;
+      }
+    </style>
+</head>
+<body class="flex flex-col h-full overflow-scroll transition-colors duration-300">
+    <div class="navbar-container w-full box-border z-100"> 
+        <div class="navbar flex justify-between items-center bg-gradient-to-r from-blue-800 via-blue-500 to-blue-400 p-4 rounded-b-lg sticky top-0 w-full max-w-full box-border"> 
+            <a href="/" class="logo text-white text-4xl font-bold hover:bg-blue-700">Cascade</a>
+            <div class="menu flex items-center">
+                <a href="games.html" class="text-white text-2xl p-4 rounded-lg hover:bg-blue-400">Games</a>
+                <a href="javascript:void(0)" onclick="toggleTheme()" class="text-white text-2xl p-4 rounded-lg hover:bg-blue-400">Theme</a>
+            </div>
+        </div>
     </div>
-    <footer> 
-      <img src="waves.svg" class="waves" />
+    <div class="main-text relative z-10 text-white text-center p-5">
+        <h1 class="text-9xl">Cascade</h1>
+        <h3 id="phrase-container" class="text-2xl"></h3>
+    </div>
+    <footer class="mt-auto w-full text-center">
+        <img src="waves.svg" class="waves w-full h-auto" />
     </footer>
     <script src="index.js"></script>
-  </body>
+</body>
 </html>
